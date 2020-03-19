@@ -4,26 +4,8 @@
 ### Vue监听
 Vue在`mounted()`中添加监听事件之后，记得在`destroyed()`中移除监听，特别是监听滚动事件
 
-### Vue中善用解构赋值
-```javascript
-export default {
-  data () {
-    return {
-      list: [],
-      form: {},
-      isShow: false
-    }
-  },
-
-  created() {
-    const { list } = this; // 不需要修改的data
-    let { form } = this; // 需要修改的data
-    
-    form = { name: '123' };
-    this.form = form;
-  }
-}
-```
+### Vue引入iView之后使用Col标签后VSCode会报错
+解决方法：在`settings`中搜索`vetur.validation.template`，关闭或者改成false之后重启vscode即可解决
 
 ## 小程序相关
 ### 微信小程序bindtap
