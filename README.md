@@ -7,6 +7,22 @@ Vue在`mounted()`中添加监听事件之后，记得在`destroyed()`中移除�
 ### Vue引入iView之后使用Col标签后VSCode会报错
 解决方法：在`settings`中搜索`vetur.validation.template`，关闭或者改成false之后重启vscode即可解决
 
+### 在VsCode中识别webpack的alias
+在项目根目录下创建`jsconfig.json`，如果使用ts则创建`tsconfig.json`，这里只展示js
+```json
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@views/*": ["./src/views/*"]
+    }
+  },
+  "include": ["./src/**/*"]
+}
+```
+> 问题：只会显示js文件和文件夹，其他文件不会显示，暂时没发现解决方法
+
 ## 小程序相关
 ### 微信小程序bindtap
 以下情况点击`area`可能并不会获取到该元素，小程序判定点在哪个元素上，触发的就是哪个。比如：你想要点击整个`area`元素来获取data-index的值，但你点击在了子元素`area-item`上，那么你的函数返回的就是该元素的内容，不会返回`area`的内容
