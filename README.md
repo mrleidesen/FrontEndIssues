@@ -42,6 +42,20 @@ Vue在`mounted()`中添加监听事件之后，记得在`destroyed()`中移除�
 ```
 > 解决方法：内部元素的样式`pointer-events`修改为`none`; 或在内部放置一个位于所有子元素顶层的`div`专门用来点击;
 
+### css来判断元素是否为空
+通过伪类`:empty`来判断一个元素内部是否有文字或者是否存在子元素
+```css
+div:empty {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+}
+div {
+  width: 50px;
+  height: 50px;
+  background-color: orange;
+}
+```
 
 ## ios、安卓相关
 * ios调用接口，可能会因为域名不同出现问题，即使做过跨域
