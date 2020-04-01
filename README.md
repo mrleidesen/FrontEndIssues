@@ -60,5 +60,10 @@ div {
 ### 百度地图自定义标记点图标
 从iconfont上下载的图标，设置好大小即可显示，但如果图标太大，在PS中修改后又无法正常显示尺寸（尚不知问题，但从iconfont上设置好大小没问题）
 
+### 关于判断网络状态
+* `navigator.onLine`能判断网络是否在线
+* `navigator.connection`能获取网络状态信息
+* `navigator.connection`可以监听`change`事件
+
 ## ios、安卓相关
 * ios调用接口，可能会因为域名不同出现问题，即使做过跨域
