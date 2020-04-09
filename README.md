@@ -23,6 +23,24 @@ Vue在`mounted()`中添加监听事件之后，记得在`destroyed()`中移除�
 ```
 > 问题：只会显示js文件和文件夹，其他文件不会显示，暂时没发现解决方法
 
+### 关于axios使用post传递application/x-www-form-urlencoded的问题
+使用`qs`库来格式化数据
+```javascript
+axios({
+  method: 'post',
+  url: '/api/demo',
+  data: qs.stringify({ id: 1 })
+})
+```
+如果你需要传递的数据中包含数组，则需要这样解决
+```javascript
+axios({
+  method: 'post',
+  url: '/api/demo',
+  data: qs.stringify({ id: 1, arr: [1, 2] }, { indices: false })
+})
+```
+
 ## 小程序相关以及HTML
 
 ### movable-view
