@@ -1,5 +1,32 @@
 # 前端技术一些踩坑记录（缓慢记录中...）
 
+## 编辑器相关（VSCode）
+### 实用插件
+* Beautify *格式化代码*
+* Bracket Pair Colorizer *括号颜色*
+* Path Intellisense *路径智能提示*
+* Vetur *Vue提示插件*
+* ES6 *ES6语法提示*
+* Open in Browser *在浏览器中打开*
+
+### React开启JSX支持
+打开`settings`，然后在右上角打开`settings.json`，配置如下：
+```json
+"emmet.includeLanguages": {
+  "javascript": "javascriptreact"
+}
+```
+
+## NPM(Yarn)相关
+### --save和--save-dev的区别
+`npm install --save`安装的包是运行时的依赖，比如`axios`  
+`npm install --save-dev`安装的包仅仅是在开发阶段的依赖，比如`less\sass`等
+
+### npm在国内加快下载速度
+* 可以使用`cnpm`，安装方法`npm install -g cnpm --registry=https://registry.npm.taobao.org`(一般推荐，有时候会出问题) [文档](https://developer.aliyun.com/mirror/NPM?from=tnpm)
+* 安装`yarn`来代替，直接下载或者在npm中下载，推荐直接下载安装 `(推荐)`
+
+
 ## 框架（Vue, React等）相关
 ### Vue监听
 Vue在`mounted()`中添加监听事件之后，记得在`destroyed()`中移除监听，特别是监听滚动事件
