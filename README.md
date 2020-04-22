@@ -23,8 +23,14 @@
 `npm install --save-dev`安装的包仅仅是在开发阶段的依赖，比如`less\sass`等
 
 ### npm在国内加快下载速度
-* 可以使用`cnpm`，安装方法`npm install -g cnpm --registry=https://registry.npm.taobao.org`(一般推荐，有时候会出问题) [文档](https://developer.aliyun.com/mirror/NPM?from=tnpm)
+* 可以使用`cnpm`，安装方法`npm install -g cnpm --registry=https://registry.npm.taobao.org`(不推荐，有时候会出问题) [文档](https://developer.aliyun.com/mirror/NPM?from=tnpm)
 * 安装`yarn`来代替，直接下载或者在npm中下载，推荐直接下载安装 `(推荐)`
+```python
+# 切换淘宝源
+npx nrm use taobao
+# 切换回来
+npx nrm use npm
+```
 
 
 ## 框架（Vue, React等）相关
