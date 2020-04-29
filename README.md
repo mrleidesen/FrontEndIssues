@@ -74,6 +74,9 @@ axios({
 })
 ```
 
+### 关于Mock.js
+* 无法使用`fetch`来进行模拟
+
 ## 小程序相关以及HTML
 
 ### movable-view
