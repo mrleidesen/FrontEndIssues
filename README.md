@@ -123,5 +123,8 @@ div {
 * 使用`navigator.mediaDevices`来获取stream流---[MDN文档](https://developer.mozilla.org/zh-CN/docs/Web/API/MediaDevices) 
 * 获取的stream流可以使用MediaRecorder录制获取webm文件---[MDN文档](https://developer.mozilla.org/en-US/docs/Web/API/MediaStream_Recording_API/Recording_a_media_element)
 
+### 获取内部可滚动元素的滚动
+* 通过offsetTop来获取内部以及外部的高度，通过相减则是实际内部高度
+
 ## ios、安卓相关
 * ios调用接口，可能会因为域名不同出现问题，即使做过跨域
