@@ -45,14 +45,14 @@ Vue在`mounted()`中添加监听事件之后，记得在`destroyed()`中移除�
 ```json
 {
   "compilerOptions": {
-    "baseUrl": ".",
+    "baseUrl": "./",
     "paths": {
-      "@/*": ["./src/*"],
-      "@views/*": ["./src/views/*"]
+        "@/*": ["src/*"]
     }
   },
-  "include": ["./src/**/*"]
+  "exclude": ["node_modules", "dist"]
 }
+
 ```
 > 问题：只会显示js文件和文件夹，其他文件不会显示，暂时没发现解决方法
 
