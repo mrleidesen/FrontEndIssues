@@ -77,6 +77,42 @@ axios({
 ### 关于Mock.js
 * 无法使用`fetch`来进行模拟
 
+### 在Vue中使用`Lodash`中的`debounce`
+官方文档演示
+> _.debounce(func, [wait=0], [options={}])
+之后自己在使用过程中发现用不了，搜索了一下别人的代码，然后写成如下
+```js
+import _ from 'lodash'
+export default {
+  methods: {
+    handleClick: _.debounce(() => {
+      console.log('防抖成功')
+      this.fetchData()
+    }, 500),
+
+    fetchData() {
+      console.log('fetch')
+    },
+  }
+}
+```
+上面代码就会报错，原因是`_.debounce`中的`this`指向错误，所以不能使用箭头函数，要改成普通的写法，如果`handleClick`带参数，也可以直接写在`function(args)`中
+```js
+import _ from 'lodash'
+export default {
+  methods: {
+    handleClick: _.debounce(function() {
+      console.log('防抖成功')
+      this.fetchData()
+    }, 500),
+
+    fetchData() {
+      console.log('fetch')
+    },
+  }
+}
+```
+
 ## 小程序相关以及HTML
 
 ### movable-view
