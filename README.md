@@ -5,18 +5,18 @@
 * `[2020-5-12]` 更新lodash
 
 ## 目录
-* [编辑器相关（VSCode）](#编辑器相关（VSCode）)
+* [编辑器相关（VSCode）](#编辑器相关VSCode)
   * [实用插件](#实用插件)
   * [React开启JSX支持](#React开启JSX支持)
-* [NPM(Yarn)相关](#NPM(Yarn)相关)
+* [NPM(Yarn)相关](#NPMYarn相关)
   * [--save和--save-dev的区别](#--save和--save-dev的区别)
   * [npm在国内加快下载速度](#npm在国内加快下载速度)
 * [框架（Vue, React等）相关](#框架Vue-React等相关)
   * [Vue监听](#Vue监听)
   * [Vue引入iView之后使用Col标签后VSCode会报错](#Vue引入iView之后使用Col标签后VSCode会报错)
   * [在VsCode中识别webpack的alias](#在VsCode中识别webpack的alias)
-  * [关于axios使用post传递](#关于axios使用post传递application/x-www-form-urlencoded的问题)
-  * [关于Mock.js](#关于Mock.js)
+  * [关于axios使用post传递](#关于axios使用post传递application-x-www-form-urlencoded的问题)
+  * [关于Mock.js](#关于Mockjs)
   * [在Vue中使用Lodash中的debounce](#在Vue中使用Lodash中的debounce)
 * [小程序相关以及HTML](#小程序相关以及HTML)
   * [movable-view](#movable-view)
@@ -26,7 +26,7 @@
   * [关于判断网络状态](#关于判断网络状态)
   * [JS录制屏幕内容](#JS录制屏幕内容)
   * [获取内部可滚动元素的滚动](#获取内部可滚动元素的滚动)
-* [ios、安卓相关](#ios、安卓相关)
+* [ios、安卓相关](#ios安卓相关)
 
 ## 编辑器相关（VSCode）
 ### 实用插件
