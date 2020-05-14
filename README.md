@@ -1,6 +1,7 @@
 # 前端技术一些踩坑记录（缓慢记录中...）
 
 ## 更新日志
+* `[2020-5-14]` 更新JS获取经纬度
 * `[2020-5-13]` 更新目录
 * `[2020-5-12]` 更新lodash
 
@@ -26,6 +27,7 @@
   * [关于判断网络状态](#关于判断网络状态)
   * [JS录制屏幕内容](#JS录制屏幕内容)
   * [获取内部可滚动元素的滚动](#获取内部可滚动元素的滚动)
+  * [原生JS获取当前经纬度](#原生JS获取当前经纬度)
 * [ios、安卓相关](#ios安卓相关)
 
 ## 编辑器相关（VSCode）
@@ -218,6 +220,21 @@ div {
 
 ### 获取内部可滚动元素的滚动
 * 通过offsetTop来获取内部以及外部的高度，通过相减则是实际内部高度
+
+[回到顶部](#目录)
+
+### 原生JS获取当前经纬度
+[MDN官方文档](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/getCurrentPosition)
+```js
+const geo = navigator.geolocation
+geo.getCurrentPosition((res) => {
+  const crd = res.coords
+  console.log('Your current position is:');
+  console.log(`Latitude : ${crd.latitude}`);
+  console.log(`Longitude: ${crd.longitude}`);
+  console.log(`More or less ${crd.accuracy} meters.`);
+})
+```
 
 [回到顶部](#目录)
 
