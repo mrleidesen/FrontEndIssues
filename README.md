@@ -19,7 +19,7 @@
   * [Vue监听](#Vue监听)
   * [Vue引入iView之后使用Col标签后VSCode会报错](#Vue引入iView之后使用Col标签后VSCode会报错)
   * [在VsCode中识别webpack的alias](#在VsCode中识别webpack的alias)
-  * [关于axios使用post传递](#关于axios使用post传递application-x-www-form-urlencoded的问题)
+  * [关于axios使用post传递](#关于axios使用post传递applicationx-www-form-urlencoded的问题)
   * [关于Mock.js](#关于Mockjs)
   * [在Vue中使用Lodash中的debounce](#在Vue中使用Lodash中的debounce)
 * [小程序相关以及HTML](#小程序相关以及HTML)
