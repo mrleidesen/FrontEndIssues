@@ -1,6 +1,7 @@
 # 前端技术一些踩坑记录（缓慢记录中...）
 
 ## 更新日志
+* `[2020-6-29]` 更新监听dom变化
 * `[2020-6-11]` 更新微信js-sdk配置相关
 * `[2020-6-02]` 更新地图调用
 * `[2020-5-28]` 更新cookies
@@ -34,6 +35,7 @@
   * [关于调用百度腾讯等web服务](#关于调用百度腾讯等web服务)
   * [关于cookies](#关于cookies)
   * [微信sdk](#微信sdk)
+  * [监听DOM变化](#监听DOM变化)
 * [ios、安卓相关](#ios安卓相关)
 
 ## 编辑器相关（VSCode）
@@ -258,6 +260,40 @@ geo.getCurrentPosition((res) => {
 
 ### 微信sdk
 前端微信sdk的Config只需要域名或者ip地址能够对上就好
+
+[回到顶部](#目录)
+
+### 监听DOM变化
+原生JS监听DOM变化
+```js
+// 选择需要观察变动的节点
+var targetNode = document.getElementById('some-id');
+
+// 观察器的配置（需要观察什么变动）
+var config = { attributes: true, childList: true, subtree: true };
+
+// 当观察到变动时执行的回调函数
+var callback = function(mutations) {
+    for(var mutation of mutations) {
+        if (mutation.type == 'childList') {
+            console.log('A child node has been added or removed.');
+        }
+        else if (mutation.type == 'attributes') {
+            console.log('The ' + mutation.attributeName + ' attribute was modified.');
+        }
+    }
+};
+
+// 创建一个观察器实例并传入回调函数
+var observer = new MutationObserver(callback);
+
+// 以上述配置开始观察目标节点
+observer.observe(targetNode, config);
+
+// 之后，可停止观察
+observer.disconnect();
+```
+[参考MDN文档](https://developer.mozilla.org/zh-CN/docs/Web/API/MutationObserver)
 
 [回到顶部](#目录)
 
