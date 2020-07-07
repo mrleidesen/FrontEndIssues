@@ -1,6 +1,7 @@
 # 前端技术一些踩坑记录（缓慢记录中...）
 
 ## 更新日志
+* `[2020-7-07]` 更新后端返回Long数据类型
 * `[2020-6-29]` 更新监听dom变化
 * `[2020-6-11]` 更新微信js-sdk配置相关
 * `[2020-6-02]` 更新地图调用
@@ -23,6 +24,7 @@
   * [关于axios使用post传递](#关于axios使用post传递applicationx-www-form-urlencoded的问题)
   * [关于Mock.js](#关于Mockjs)
   * [在Vue中使用Lodash中的debounce](#在Vue中使用Lodash中的debounce)
+  * [后端接口Long类型的问题](#后端接口Long类型的问题)
 * [小程序相关以及HTML](#小程序相关以及HTML)
   * [movable-view](#movable-view)
   * [关于点击穿透](#关于点击穿透)
@@ -165,6 +167,11 @@ export default {
   }
 }
 ```
+
+[回到顶部](#目录)
+
+### 后端接口Long类型的问题
+请求接口中，如果后端返回Long类型的参数（比如ID），前端浏览器会自动截断，需要后端将Long转成String返回
 
 [回到顶部](#目录)
 
