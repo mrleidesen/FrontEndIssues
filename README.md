@@ -1,6 +1,7 @@
 # 前端技术一些踩坑记录（缓慢记录中...）
 
 ## 更新日志
+* `[2020-7-22]` 更新[Vue和TS](#Vue和TS)
 * `[2020-7-07]` 更新后端返回Long数据类型
 * `[2020-6-29]` 更新监听dom变化
 * `[2020-6-11]` 更新微信js-sdk配置相关
@@ -25,6 +26,7 @@
   * [关于Mock.js](#关于Mockjs)
   * [在Vue中使用Lodash中的debounce](#在Vue中使用Lodash中的debounce)
   * [后端接口Long类型的问题](#后端接口Long类型的问题)
+  * [Vue和TS](#Vue和TS)
 * [小程序相关以及HTML](#小程序相关以及HTML)
   * [movable-view](#movable-view)
   * [关于点击穿透](#关于点击穿透)
@@ -172,6 +174,37 @@ export default {
 
 ### 后端接口Long类型的问题
 请求接口中，如果后端返回Long类型的参数（比如ID），前端浏览器会自动截断，需要后端将Long转成String返回
+
+[回到顶部](#目录)
+
+### Vue和TS
+* 如果是Vue-Cli创建的项目，可以在现有项目下直接`vue add typescript`
+* 关于`Mixins`
+```js
+import { Vue, Component, Mixins } from 'vue-property-decorator'
+// 这个可以封装成 .ts文件做全局mixins
+@Component({})
+export class GlobalMixins extends Vue {
+  /**
+   * 设置提示框
+   */
+  setSnackbar({
+    msg = "一条提醒",
+    type = "success",
+    timeout = 2000
+  }) {
+    this.$store.commit('openSnackbar', {
+      msg,
+      type,
+      timeout
+    })
+  }
+}
+// 要这么写
+@Component({})
+export default class App extends Mixins(GlobalMixins) {}
+```
+* 在TS中定义prototype,可参考[这个答案](https://stackoverflow.com/questions/55893522/vue-prototype-property-doesnt-work-with-typescript)
 
 [回到顶部](#目录)
 
