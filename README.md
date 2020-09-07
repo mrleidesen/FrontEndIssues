@@ -1,6 +1,7 @@
 # 前端技术一些踩坑记录（缓慢记录中...）
 
 ## 更新日志
+* `[2020-9-07]` 更新[页面平滑滚动](#页面平滑滚动)
 * `[2020-7-22]` 更新[Vue和TS](#Vue和TS)
 * `[2020-7-07]` 更新后端返回Long数据类型
 * `[2020-6-29]` 更新监听dom变化
@@ -12,35 +13,39 @@
 * `[2020-5-12]` 更新lodash
 
 ## 目录
-* [编辑器相关（VSCode）](#编辑器相关VSCode)
-  * [实用插件](#实用插件)
-  * [React开启JSX支持](#React开启JSX支持)
-* [NPM(Yarn)相关](#NPMYarn相关)
-  * [--save和--save-dev的区别](#--save和--save-dev的区别)
-  * [npm在国内加快下载速度](#npm在国内加快下载速度)
-* [框架（Vue, React等）相关](#框架Vue-React等相关)
-  * [Vue监听](#Vue监听)
-  * [Vue引入iView之后使用Col标签后VSCode会报错](#Vue引入iView之后使用Col标签后VSCode会报错)
-  * [在VsCode中识别webpack的alias](#在VsCode中识别webpack的alias)
-  * [关于axios使用post传递](#关于axios使用post传递applicationx-www-form-urlencoded的问题)
-  * [关于Mock.js](#关于Mockjs)
-  * [在Vue中使用Lodash中的debounce](#在Vue中使用Lodash中的debounce)
-  * [后端接口Long类型的问题](#后端接口Long类型的问题)
-  * [Vue和TS](#Vue和TS)
-* [小程序相关以及HTML](#小程序相关以及HTML)
-  * [movable-view](#movable-view)
-  * [关于点击穿透](#关于点击穿透)
-  * [css来判断元素是否为空](#css来判断元素是否为空)
-  * [百度地图自定义标记点图标](#百度地图自定义标记点图标)
-  * [关于判断网络状态](#关于判断网络状态)
-  * [JS录制屏幕内容](#JS录制屏幕内容)
-  * [获取内部可滚动元素的滚动](#获取内部可滚动元素的滚动)
-  * [原生JS获取当前经纬度](#原生JS获取当前经纬度)
-  * [关于调用百度腾讯等web服务](#关于调用百度腾讯等web服务)
-  * [关于cookies](#关于cookies)
-  * [微信sdk](#微信sdk)
-  * [监听DOM变化](#监听DOM变化)
-* [ios、安卓相关](#ios安卓相关)
+- [前端技术一些踩坑记录（缓慢记录中...）](#前端技术一些踩坑记录缓慢记录中)
+  - [更新日志](#更新日志)
+  - [目录](#目录)
+  - [编辑器相关（VSCode）](#编辑器相关vscode)
+    - [实用插件](#实用插件)
+    - [React开启JSX支持](#react开启jsx支持)
+  - [NPM(Yarn)相关](#npmyarn相关)
+    - [--save和--save-dev的区别](#--save和--save-dev的区别)
+    - [npm在国内加快下载速度](#npm在国内加快下载速度)
+  - [框架（Vue, React等）相关](#框架vue-react等相关)
+    - [Vue监听](#vue监听)
+    - [Vue引入iView之后使用Col标签后VSCode会报错](#vue引入iview之后使用col标签后vscode会报错)
+    - [在VsCode中识别webpack的alias](#在vscode中识别webpack的alias)
+    - [关于axios使用post传递application/x-www-form-urlencoded的问题](#关于axios使用post传递applicationx-www-form-urlencoded的问题)
+    - [关于Mock.js](#关于mockjs)
+    - [在Vue中使用`Lodash`中的`debounce`](#在vue中使用lodash中的debounce)
+    - [后端接口Long类型的问题](#后端接口long类型的问题)
+    - [Vue和TS](#vue和ts)
+  - [小程序相关以及HTML](#小程序相关以及html)
+    - [movable-view](#movable-view)
+    - [关于点击穿透](#关于点击穿透)
+    - [css来判断元素是否为空](#css来判断元素是否为空)
+    - [百度地图自定义标记点图标](#百度地图自定义标记点图标)
+    - [关于判断网络状态](#关于判断网络状态)
+    - [JS录制屏幕内容](#js录制屏幕内容)
+    - [获取内部可滚动元素的滚动](#获取内部可滚动元素的滚动)
+    - [原生JS获取当前经纬度](#原生js获取当前经纬度)
+    - [关于调用百度腾讯等web服务](#关于调用百度腾讯等web服务)
+    - [关于cookies](#关于cookies)
+    - [微信sdk](#微信sdk)
+    - [监听DOM变化](#监听dom变化)
+    - [页面平滑滚动](#页面平滑滚动)
+  - [ios、安卓相关](#ios安卓相关)
 
 ## 编辑器相关（VSCode）
 ### 实用插件
@@ -334,6 +339,14 @@ observer.observe(targetNode, config);
 observer.disconnect();
 ```
 [参考MDN文档](https://developer.mozilla.org/zh-CN/docs/Web/API/MutationObserver)
+
+[回到顶部](#目录)
+
+### 页面平滑滚动
+- css
+  - `scroll-behavior: smooth`
+- js
+  - `scrollIntoView({ behavior: "smooth" })`
 
 [回到顶部](#目录)
 
