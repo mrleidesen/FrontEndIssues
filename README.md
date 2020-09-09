@@ -45,7 +45,6 @@
     - [微信sdk](#微信sdk)
     - [监听DOM变化](#监听dom变化)
     - [页面平滑滚动](#页面平滑滚动)
-  - [ios、安卓相关](#ios安卓相关)
 
 ## 编辑器相关（VSCode）
 ### 实用插件
@@ -347,10 +346,5 @@ observer.disconnect();
   - `scroll-behavior: smooth`
 - js
   - `scrollIntoView({ behavior: "smooth" })`
-
-[回到顶部](#目录)
-
-## ios、安卓相关
-* ios调用接口，可能会因为域名不同出现问题，即使做过跨域
 
 [回到顶部](#目录)
