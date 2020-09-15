@@ -209,6 +209,18 @@ export class GlobalMixins extends Vue {
 export default class App extends Mixins(GlobalMixins) {}
 ```
 * 在TS中定义prototype,可参考[这个答案](https://stackoverflow.com/questions/55893522/vue-prototype-property-doesnt-work-with-typescript)
+* 关于$refs.form.validate()报错(Vuetify)
+```typescript
+interface VuetifyValidType extends Vue {
+  validate(): boolean
+}
+
+export default class {
+  $refs!: {
+    form: VuetifyValidType
+  }
+}
+```
 
 [回到顶部](#目录)
 
