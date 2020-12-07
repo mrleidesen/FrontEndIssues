@@ -1,6 +1,7 @@
 # 前端技术一些踩坑记录（缓慢记录中...）
 
 ## 更新日志
+* `[2020-12-07]` 更新[js文字转语音](#js文字转语音)
 * `[2020-12-04]` 更新[IOS格式化日期出错](#ios格式化日期出错)
 * `[2020-9-07]` 更新[页面平滑滚动](#页面平滑滚动)
 * `[2020-7-22]` 更新[Vue和TS](#Vue和TS)
@@ -47,6 +48,7 @@
     - [监听DOM变化](#监听dom变化)
     - [页面平滑滚动](#页面平滑滚动)
     - [IOS格式化日期出错](#ios格式化日期出错)
+    - [JS文字转语音](#js文字转语音)
 
 ## 编辑器相关（VSCode）
 ### 实用插件
@@ -365,5 +367,18 @@ observer.disconnect();
 
 ### IOS格式化日期出错
 Safari格式化日期格式**yyyy-mm-dd**时会返回NaN，或者直接报错，需要把-替换成/变成**yyyy/mm/dd**才可正常格式化。
+
+[回到顶部](#目录)
+
+### JS文字转语音
+```js
+const voice = speechSynthesis.getVoices()[0];
+let speech = new SpeechSynthesisUtterance();
+for (const key in voice) {
+  speech[key] = voice[key];
+}
+speech.text = '你好';
+speechSynthesis.speak(speech);
+```
 
 [回到顶部](#目录)
