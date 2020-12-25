@@ -1,6 +1,7 @@
 # 前端技术一些踩坑记录（缓慢记录中...）
 
 ## 更新日志
+* `[2020-12-25]` 更新[Vue中通过CDN引入高德地图externals的问题](#vue中通过cdn引入高德地图externals的问题)
 * `[2020-12-07]` 更新[js文字转语音](#js文字转语音)
 * `[2020-12-04]` 更新[IOS格式化日期出错](#ios格式化日期出错)
 * `[2020-9-07]` 更新[页面平滑滚动](#页面平滑滚动)
@@ -33,6 +34,7 @@
     - [在Vue中使用`Lodash`中的`debounce`](#在vue中使用lodash中的debounce)
     - [后端接口Long类型的问题](#后端接口long类型的问题)
     - [Vue和TS](#vue和ts)
+    - [Vue中通过CDN引入高德地图externals的问题](#vue中通过cdn引入高德地图externals的问题)
   - [小程序相关以及HTML](#小程序相关以及html)
     - [movable-view](#movable-view)
     - [关于点击穿透](#关于点击穿透)
@@ -225,6 +227,11 @@ export default class {
   }
 }
 ```
+
+[回到顶部](#目录)
+
+### Vue中通过CDN引入高德地图externals的问题
+在Vue中通过CDN引入高德地图，script标签需要放在head中，不然会报错`AMap undefined`
 
 [回到顶部](#目录)
 
