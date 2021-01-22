@@ -1,6 +1,7 @@
 # 前端技术一些踩坑记录（缓慢记录中...）
 
 ## 更新日志
+* `[2021-01-22]` 更新[Tailwind在VSCode中的智能提示](#tailwind在vscode中的智能提示)
 * `[2020-12-25]` 更新[Vue中通过CDN引入高德地图externals的问题](#vue中通过cdn引入高德地图externals的问题)
 * `[2020-12-07]` 更新[js文字转语音](#js文字转语音)
 * `[2020-12-04]` 更新[IOS格式化日期出错](#ios格式化日期出错)
@@ -51,6 +52,7 @@
     - [页面平滑滚动](#页面平滑滚动)
     - [IOS格式化日期出错](#ios格式化日期出错)
     - [JS文字转语音](#js文字转语音)
+    - [Tailwind在VSCode中的智能提示](#tailwind在vscode中的智能提示)
 
 ## 编辑器相关（VSCode）
 ### 实用插件
@@ -387,5 +389,18 @@ for (const key in voice) {
 speech.text = '你好';
 speechSynthesis.speak(speech);
 ```
+
+[回到顶部](#目录)
+
+### Tailwind在VSCode中的智能提示
+* 安装插件`Tailwind CSS IntelliSense`
+* 在VSCode设置中找到`tailwindCSS.includeLanguages`
+```json
+{
+  "plaintext": "vue",
+  "javascript": "javascript"
+}
+```
+* 如上设置之后就能Vue和React都能智能提示了
 
 [回到顶部](#目录)
