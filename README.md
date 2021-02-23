@@ -1,6 +1,7 @@
 # 前端技术一些踩坑记录（缓慢记录中...）
 
 ## 更新日志
+* `[2021-02-23]` 更新[Element UI如果在项目中需要CDN引入](#element-ui如果在项目中需要cdn引入)
 * `[2021-01-22]` 更新[Tailwind在VSCode中的智能提示](#tailwind在vscode中的智能提示)
 * `[2020-12-25]` 更新[Vue中通过CDN引入高德地图externals的问题](#vue中通过cdn引入高德地图externals的问题)
 * `[2020-12-07]` 更新[js文字转语音](#js文字转语音)
@@ -36,6 +37,7 @@
     - [后端接口Long类型的问题](#后端接口long类型的问题)
     - [Vue和TS](#vue和ts)
     - [Vue中通过CDN引入高德地图externals的问题](#vue中通过cdn引入高德地图externals的问题)
+    - [Element UI如果在项目中需要CDN引入](#element-ui如果在项目中需要cdn引入)
   - [小程序相关以及HTML](#小程序相关以及html)
     - [movable-view](#movable-view)
     - [关于点击穿透](#关于点击穿透)
@@ -234,6 +236,13 @@ export default class {
 
 ### Vue中通过CDN引入高德地图externals的问题
 在Vue中通过CDN引入高德地图，script标签需要放在head中，不然会报错`AMap undefined`
+
+[回到顶部](#目录)
+
+### Element UI如果在项目中需要CDN引入
+不需要配置externals，直接通过官方提供的CDN引入方式就好，也不需要在`main.js`中调用  
+直接就能全局引入 
+> 后续有什么问题再更新
 
 [回到顶部](#目录)
 
