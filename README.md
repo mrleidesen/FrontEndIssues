@@ -1,6 +1,7 @@
 # 前端技术一些踩坑记录（缓慢记录中...）
 
 ## 更新日志
+* `[2021-02-25]` [Vite的问题](#vite的问题)
 * `[2021-02-23]` 更新[Element UI如果在项目中需要CDN引入](#element-ui如果在项目中需要cdn引入)
 * `[2021-01-22]` 更新[Tailwind在VSCode中的智能提示](#tailwind在vscode中的智能提示)
 * `[2020-12-25]` 更新[Vue中通过CDN引入高德地图externals的问题](#vue中通过cdn引入高德地图externals的问题)
@@ -8,14 +9,6 @@
 * `[2020-12-04]` 更新[IOS格式化日期出错](#ios格式化日期出错)
 * `[2020-9-07]` 更新[页面平滑滚动](#页面平滑滚动)
 * `[2020-7-22]` 更新[Vue和TS](#Vue和TS)
-* `[2020-7-07]` 更新后端返回Long数据类型
-* `[2020-6-29]` 更新监听dom变化
-* `[2020-6-11]` 更新微信js-sdk配置相关
-* `[2020-6-02]` 更新地图调用
-* `[2020-5-28]` 更新cookies
-* `[2020-5-14]` 更新JS获取经纬度
-* `[2020-5-13]` 更新目录
-* `[2020-5-12]` 更新lodash
 
 ## 目录
 - [前端技术一些踩坑记录（缓慢记录中...）](#前端技术一些踩坑记录缓慢记录中)
@@ -38,6 +31,7 @@
     - [Vue和TS](#vue和ts)
     - [Vue中通过CDN引入高德地图externals的问题](#vue中通过cdn引入高德地图externals的问题)
     - [Element UI如果在项目中需要CDN引入](#element-ui如果在项目中需要cdn引入)
+    - [Vite的问题](#vite的问题)
   - [小程序相关以及HTML](#小程序相关以及html)
     - [movable-view](#movable-view)
     - [关于点击穿透](#关于点击穿透)
@@ -243,6 +237,19 @@ export default class {
 不需要配置externals，直接通过官方提供的CDN引入方式就好，也不需要在`main.js`中调用  
 直接就能全局引入 
 > 后续有什么问题再更新
+
+[回到顶部](#目录)
+
+### Vite的问题
+* Vite引入VueRouter4的问题
+```js
+// 以下代码是报错代码
+import VueRouter from 'vue-router'
+
+// 以下代码是正确代码
+import {createRouter, createWebHashHistory} from 'vue-router
+// 因为VueRouter4没有export default，所以不能使用第一种方式
+```
 
 [回到顶部](#目录)
 
