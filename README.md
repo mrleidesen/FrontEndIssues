@@ -32,6 +32,7 @@
     - [Vue中通过CDN引入高德地图externals的问题](#vue中通过cdn引入高德地图externals的问题)
     - [Element UI如果在项目中需要CDN引入](#element-ui如果在项目中需要cdn引入)
     - [Vite的问题](#vite的问题)
+    - [Vite2使用alias](#vite2使用alias)
   - [小程序相关以及HTML](#小程序相关以及html)
     - [movable-view](#movable-view)
     - [关于点击穿透](#关于点击穿透)
@@ -249,6 +250,27 @@ import VueRouter from 'vue-router'
 // 以下代码是正确代码
 import {createRouter, createWebHashHistory} from 'vue-router
 // 因为VueRouter4没有export default，所以不能使用第一种方式
+```
+
+[回到顶部](#目录)
+
+### Vite2使用alias
+```js
+import { defineConfig } from 'vite'
+import vue from '@vitejs/plugin-vue'
+// 正常来讲path不需要安装，node自带
+// 如果import出现异常，请检查node环境
+import path from 'path'
+
+export default defineConfig({
+  plugins: [vue()],
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, './src')
+    }
+  }
+})
+
 ```
 
 [回到顶部](#目录)
