@@ -255,11 +255,12 @@ import {createRouter, createWebHashHistory} from 'vue-router
 [回到顶部](#目录)
 
 ### Vite2使用alias
+`vite.config.js`
 ```js
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 // 正常来讲path不需要安装，node自带
-// 如果import出现异常，请检查node环境
+// 如果Typescript环境下import出现异常，请安装@types/node
 import path from 'path'
 
 export default defineConfig({
@@ -270,8 +271,32 @@ export default defineConfig({
     }
   }
 })
-
 ```
+`tsconfig.json`配置让项目能识别@
+```json
+{
+  // ...
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "tests/**/*.ts",
+    "tests/**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules"
+  ],
+  "compilerOptions": {
+    // ...
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  }
+  // ...
+}
+```
+
 
 [回到顶部](#目录)
 
