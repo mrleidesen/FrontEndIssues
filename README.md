@@ -1,6 +1,7 @@
 # 前端技术一些踩坑记录（缓慢记录中...）
 
 ## 更新日志
+* `[2021-04-07]` 更新[优化async/await](#优化asyncawait)
 * `[2021-02-25]` [Vite的问题](#vite的问题)
 * `[2021-02-23]` 更新[Element UI如果在项目中需要CDN引入](#element-ui如果在项目中需要cdn引入)
 * `[2021-01-22]` 更新[Tailwind在VSCode中的智能提示](#tailwind在vscode中的智能提示)
@@ -33,6 +34,7 @@
     - [Element UI如果在项目中需要CDN引入](#element-ui如果在项目中需要cdn引入)
     - [Vite的问题](#vite的问题)
     - [Vite2使用alias](#vite2使用alias)
+    - [优化async/await](#优化asyncawait)
   - [小程序相关以及HTML](#小程序相关以及html)
     - [movable-view](#movable-view)
     - [关于点击穿透](#关于点击穿透)
@@ -275,7 +277,6 @@ export default defineConfig({
 `tsconfig.json`配置让项目能识别@
 ```json
 {
-  // ...
   "include": [
     "src/**/*.ts",
     "src/**/*.tsx",
@@ -283,20 +284,35 @@ export default defineConfig({
     "tests/**/*.ts",
     "tests/**/*.tsx"
   ],
-  "exclude": [
-    "node_modules"
-  ],
   "compilerOptions": {
-    // ...
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]
     }
   }
-  // ...
 }
 ```
 
+[回到顶部](#目录)
+
+### 优化async/await
+```js
+// try catch嵌套可能用起来不是很方便
+// 在返回时直接Promise返回then,catch的值
+function upload() {
+  return new Promise((resolve, reject) => {
+    // 你的代码
+  }).then(res => [res, null]).catch(err => [null, err])
+}
+
+async function fn() {
+  // 解构赋值获取res和err
+  // 如果没有异常，则err是null，反之res是null
+  const [res, err] = await upload()
+
+  console.log(res, err)
+}
+```
 
 [回到顶部](#目录)
 
