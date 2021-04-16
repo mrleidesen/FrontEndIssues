@@ -1,6 +1,7 @@
 # 前端技术一些踩坑记录（缓慢记录中...）
 
 ## 更新日志
+* `[2021-04-16]` 更新[相邻的button点击后让div发生改变](#相邻的button点击后让div发生改变)/[CSS水平和垂直居中](#css水平和垂直居中)
 * `[2021-04-07]` 更新[优化async/await](#优化asyncawait)
 * `[2021-02-25]` [Vite的问题](#vite的问题)
 * `[2021-02-23]` 更新[Element UI如果在项目中需要CDN引入](#element-ui如果在项目中需要cdn引入)
@@ -52,6 +53,8 @@
     - [IOS格式化日期出错](#ios格式化日期出错)
     - [JS文字转语音](#js文字转语音)
     - [Tailwind在VSCode中的智能提示](#tailwind在vscode中的智能提示)
+    - [相邻的button点击后让div发生改变](#相邻的button点击后让div发生改变)
+    - [CSS水平和垂直居中](#css水平和垂直居中)
 
 ## 编辑器相关（VSCode）
 ### 实用插件
@@ -481,5 +484,117 @@ speechSynthesis.speak(speech);
 }
 ```
 * 如上设置之后就能Vue和React都能智能提示了
+
+[回到顶部](#目录)
+
+### 相邻的button点击后让div发生改变
+面试被问到的问题，回答的时候答了`:focus`和兄弟选择器的方式判断，但是没有实际用过，毕竟项目中很少出现
+```html
+<button class="btn">Click</button>
+<div class="listen">Change Color</div>
+```
+```css
+.btn:focus ~ .listen {
+  color: red;
+}
+```
+回来复现了一下，是可行的
+
+[回到顶部](#目录)
+
+### CSS水平和垂直居中
+同样也是在面试中被问到的，怪我才疏学浅，平时flex一把梭
+* Flex
+```css
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+```
+* Flex Margin Auto
+> 这种方式比较冷门，只能在flex的情况下才能用margin: auto水平和垂直居中
+```html
+<div class="container">
+  <div class="center"></div>
+</div>
+<style>
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+.center {
+  width: 100px;
+  heihgt: 100px;
+  margin: auto;
+  background-color: teal;
+}
+</style>
+```
+* inline-block
+```html
+<div class="container">
+  <div class="center"></div>
+</div>
+<style>
+.container {
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+  line-height: 100vh;
+}
+.center {
+  display: inline-block;
+  width: 100px;
+  heihgt: 100px;
+  background-color: teal;
+}
+</style>
+```
+* position
+```html
+<div class="container">
+  <div class="center"></div>
+</div>
+<style>
+.container {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  background-color: teal;
+  transform: translateY(-50%) translateX(-50%);
+}
+</style>
+```
+* Grid
+```html
+<div class="parent">
+  <div class="div1"></div>
+</div>
+<style>
+.parent {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr) 100px repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr) 100px repeat(2, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+.div1 {
+  grid-area: 3 / 3 / 4 / 4;
+  background-color: teal;
+}
+</style>
+```
+目前想到这五种，其他实在在项目中没怎么用到，自己也没用过，就不放上来误导了。
 
 [回到顶部](#目录)
