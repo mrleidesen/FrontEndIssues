@@ -1,6 +1,7 @@
 # 前端技术一些踩坑记录（缓慢记录中...）
 
 ## 更新日志
+* `[2021-04-29]` 更新[Vue渲染函数问题](#vue渲染函数问题)
 * `[2021-04-19]` 更新[uni-app在安卓中调用前置摄像头自动拍照](#uni-app在安卓中调用前置摄像头自动拍照)
 * `[2021-04-16]` 更新[相邻的button点击后让div发生改变](#相邻的button点击后让div发生改变)/[CSS水平和垂直居中](#css水平和垂直居中)
 * `[2021-04-07]` 更新[优化async/await](#优化asyncawait)
@@ -37,6 +38,7 @@
     - [Vite的问题](#vite的问题)
     - [Vite2使用alias](#vite2使用alias)
     - [优化async/await](#优化asyncawait)
+    - [Vue渲染函数问题](#vue渲染函数问题)
   - [小程序相关以及HTML](#小程序相关以及html)
     - [movable-view](#movable-view)
     - [关于点击穿透](#关于点击穿透)
@@ -316,6 +318,25 @@ async function fn() {
   const [res, err] = await upload()
 
   console.log(res, err)
+}
+```
+
+[回到顶部](#目录)
+
+### Vue渲染函数问题
+如果需要`render`函数渲染Element或者Vuetify这些UI的组件，则需要在`components`中引入后才能生效，否则会提示组件未注册，一定要单独全局引入或者局部引入，不能直接导入整个UI库。
+```js
+// Vuetify距离，渲染v-btn
+export default {
+  components: {
+    VBtn
+  },
+  render(createElemet) {
+    return createElement(
+      'v-btn',
+      this.$slots.default
+    )
+  }
 }
 ```
 
