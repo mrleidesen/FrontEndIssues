@@ -42,6 +42,7 @@
   - [小程序相关以及HTML](#小程序相关以及html)
     - [movable-view](#movable-view)
     - [关于点击穿透](#关于点击穿透)
+    - [阻止事件向上传递](#阻止事件向上传递)
     - [css来判断元素是否为空](#css来判断元素是否为空)
     - [百度地图自定义标记点图标](#百度地图自定义标记点图标)
     - [关于判断网络状态](#关于判断网络状态)
@@ -362,6 +363,31 @@ export default {
 </script>
 ```
 > 解决方法：内部元素的样式`pointer-events`修改为`none`; 或在内部放置一个位于所有子元素顶层的`div`专门用来点击;
+
+[回到顶部](#目录)
+
+### 阻止事件向上传递
+例子: 我点击`inner`这个`div`，不要打印出`'outer'`
+```html
+<div class="outer">
+  <div class="inner"></div>
+</div>
+<script>
+  document.querySelector('.outer').addEventListener('click', e => {
+    console.log('outer')
+  })
+  document.querySelector('.inner').addEventListener('click', e => {
+    console.log('inner')
+  })
+</script>
+```
+解决方法：
+```js
+document.querySelector('.inner').addEventListener('click', e => {
+  e.stopPropagation()
+  console.log('inner')
+})
+```
 
 [回到顶部](#目录)
 
