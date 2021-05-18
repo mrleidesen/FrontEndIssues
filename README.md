@@ -650,6 +650,6 @@ speechSynthesis.speak(speech);
 
 ### uni-app在安卓中调用前置摄像头自动拍照
 可见个人博客的详细内容
-[个人博客跳转](https://mrleidesen.github.io)
+[uni-app安卓调用前置摄像头并自动拍照](https://mrleidesen.github.io/posts/uni_app_using_camera/)
 
 [回到顶部](#目录)
