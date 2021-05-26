@@ -67,6 +67,7 @@
 * Bracket Pair Colorizer *括号颜色*
 * Path Intellisense *路径智能提示*
 * Vetur *Vue提示插件*
+* Volar *Vue3推荐插件*
 * ES6 *ES6语法提示*
 * Open in Browser *在浏览器中打开*
 
