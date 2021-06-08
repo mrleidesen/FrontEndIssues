@@ -1,6 +1,7 @@
 # 前端技术一些踩坑记录（缓慢记录中...）
 
 ## 更新日志
+* `[2021-06-08]` 更新[TS中key/value索引](#ts中keyvalue索引)
 * `[2021-06-02]` 更新[Vue3组合式api问题](#vue3组合式api问题)
 * `[2021-04-29]` 更新[Vue渲染函数问题](#vue渲染函数问题)
 * `[2021-04-19]` 更新[uni-app在安卓中调用前置摄像头自动拍照](#uni-app在安卓中调用前置摄像头自动拍照)
@@ -41,7 +42,7 @@
     - [优化async/await](#优化asyncawait)
     - [Vue渲染函数问题](#vue渲染函数问题)
     - [Vue3组合式api问题](#vue3组合式api问题)
-  - [小程序相关以及HTML](#小程序相关以及html)
+  - [HTML/CSS/JS/小程序相关](#htmlcssjs小程序相关)
     - [movable-view](#movable-view)
     - [关于点击穿透](#关于点击穿透)
     - [阻止事件向上传递](#阻止事件向上传递)
@@ -62,6 +63,7 @@
     - [相邻的button点击后让div发生改变](#相邻的button点击后让div发生改变)
     - [CSS水平和垂直居中](#css水平和垂直居中)
     - [uni-app在安卓中调用前置摄像头自动拍照](#uni-app在安卓中调用前置摄像头自动拍照)
+    - [TS中key/value索引](#ts中keyvalue索引)
 
 ## 编辑器相关（VSCode）
 ### 实用插件
@@ -350,7 +352,7 @@ export default {
 
 [回到顶部](#目录)
 
-## 小程序相关以及HTML
+## HTML/CSS/JS/小程序相关
 
 ### movable-view
 `movable-view` 这个组件内部无法滚动设置了 `overflow: scroll` 样式的元素（尚未解决）
@@ -658,5 +660,21 @@ speechSynthesis.speak(speech);
 ### uni-app在安卓中调用前置摄像头自动拍照
 可见个人博客的详细内容
 [uni-app安卓调用前置摄像头并自动拍照](https://mrleidesen.github.io/posts/uni_app_using_camera/)
+
+[回到顶部](#目录)
+
+### TS中key/value索引
+在JS中我们可能会对一个对象这么操作
+```js
+let obj = {}
+obj["a"] = 1
+obj["success"] = function() {}
+```
+在TS中定义类型，我们就要用到`key/value`的方式
+```ts
+interface ObjectProps {
+  [key: string]: any
+}
+```
 
 [回到顶部](#目录)
