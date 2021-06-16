@@ -1,6 +1,7 @@
 # 前端技术一些踩坑记录（缓慢记录中...）
 
 ## 更新日志
+* `[2021-06-16]` 更新[React Context简易状态管理](#react-context简易状态管理)
 * `[2021-06-08]` 更新[TS中key/value索引](#ts中keyvalue索引)
 * `[2021-06-02]` 更新[Vue3组合式api问题](#vue3组合式api问题)
 * `[2021-04-29]` 更新[Vue渲染函数问题](#vue渲染函数问题)
@@ -42,6 +43,7 @@
     - [优化async/await](#优化asyncawait)
     - [Vue渲染函数问题](#vue渲染函数问题)
     - [Vue3组合式api问题](#vue3组合式api问题)
+    - [React Context简易状态管理](#react-context简易状态管理)
   - [HTML/CSS/JS/小程序相关](#htmlcssjs小程序相关)
     - [movable-view](#movable-view)
     - [关于点击穿透](#关于点击穿透)
@@ -349,6 +351,11 @@ export default {
 
 ### Vue3组合式api问题
 可直接查看[博客详情](https://mrleidesen.github.io/posts/vue3_issues/)
+
+[回到顶部](#目录)
+
+### React Context简易状态管理
+可直接查看[博客详情](https://mrleidesen.github.io/posts/react_context/)
 
 [回到顶部](#目录)
 
