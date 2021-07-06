@@ -44,7 +44,7 @@
     - [Vue渲染函数问题](#vue渲染函数问题)
     - [Vue3组合式api问题](#vue3组合式api问题)
     - [React Context简易状态管理](#react-context简易状态管理)
-  - [HTML/CSS/JS/小程序相关](#htmlcssjs小程序相关)
+  - [HTML/CSS/JS/小程序/Git相关](#htmlcssjs小程序git相关)
     - [movable-view](#movable-view)
     - [关于点击穿透](#关于点击穿透)
     - [阻止事件向上传递](#阻止事件向上传递)
@@ -66,6 +66,8 @@
     - [CSS水平和垂直居中](#css水平和垂直居中)
     - [uni-app在安卓中调用前置摄像头自动拍照](#uni-app在安卓中调用前置摄像头自动拍照)
     - [TS中key/value索引](#ts中keyvalue索引)
+    - [Git rebase](#git-rebase)
+    - [macOS下commit描述问题](#macos下commit描述问题)
 
 ## 编辑器相关（VSCode）
 ### 实用插件
@@ -359,7 +361,7 @@ export default {
 
 [回到顶部](#目录)
 
-## HTML/CSS/JS/小程序相关
+## HTML/CSS/JS/小程序/Git相关
 
 ### movable-view
 `movable-view` 这个组件内部无法滚动设置了 `overflow: scroll` 样式的元素（尚未解决）
@@ -683,5 +685,21 @@ interface ObjectProps {
   [key: string]: any
 }
 ```
+
+[回到顶部](#目录)
+
+### Git rebase
+如果我们需要合并多个`commits`我们需要用到`git rebase`
+
+* 合并前2个commits，或者通过ID进行查找
+```
+git rebase -i HEAD~2
+```
+* rebase操作建议在本地提前完成，如果想要合并已提交的远端分支，在本地rebase之后强制推送远端
+
+[回到顶部](#目录)
+
+### macOS下commit描述问题
+macOS中需要严格注意大小写，否则会出现不知名的问题
 
 [回到顶部](#目录)
