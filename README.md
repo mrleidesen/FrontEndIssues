@@ -1,6 +1,7 @@
 # 前端技术一些踩坑记录（缓慢记录中...）
 
 ## 更新日志
+* `[2021-07-09]` 更新[eslint 配置全局参数](#eslint-配置全局参数)
 * `[2021-06-16]` 更新[React Context简易状态管理](#react-context简易状态管理)
 * `[2021-06-08]` 更新[TS中key/value索引](#ts中keyvalue索引)
 * `[2021-06-02]` 更新[Vue3组合式api问题](#vue3组合式api问题)
@@ -67,7 +68,9 @@
     - [uni-app在安卓中调用前置摄像头自动拍照](#uni-app在安卓中调用前置摄像头自动拍照)
     - [TS中key/value索引](#ts中keyvalue索引)
     - [Git rebase](#git-rebase)
+    - [Git 版本回退](#git-版本回退)
     - [macOS下commit描述问题](#macos下commit描述问题)
+    - [eslint 配置全局参数](#eslint-配置全局参数)
 
 ## 编辑器相关（VSCode）
 ### 实用插件
@@ -699,7 +702,33 @@ git rebase -i HEAD~2
 
 [回到顶部](#目录)
 
+### Git 版本回退
+* 返回上一个 commit
+```shell
+git reset --hard HEAD^
+```
+* 返回前 n 个 commit
+```shell
+git reset --hard HEAD~n
+```
+
+
+[回到顶部](#目录)
+
 ### macOS下commit描述问题
 macOS中需要严格注意大小写，否则会出现不知名的问题
+
+[回到顶部](#目录)
+
+### eslint 配置全局参数
+假如我们正在一个微信的项目中使用 `wx` 这个变量，eslint 会提示我们没有定义，那么我们需要在 `.eslintrc.js` 中配置全局变量
+
+```js
+module.exports = {
+  globals: {
+    wx: 'readonly'
+  }
+}
+```
 
 [回到顶部](#目录)
