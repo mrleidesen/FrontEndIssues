@@ -1,6 +1,7 @@
 # 前端技术一些踩坑记录（缓慢记录中...）
 
 ## 更新日志
+* `[2021-07-11]` 更新[Vite jsxInject](#vite-jsxinject)
 * `[2021-07-09]` 更新[eslint 配置全局参数](#eslint-配置全局参数)
 * `[2021-06-16]` 更新[React Context简易状态管理](#react-context简易状态管理)
 * `[2021-06-08]` 更新[TS中key/value索引](#ts中keyvalue索引)
@@ -45,6 +46,7 @@
     - [Vue渲染函数问题](#vue渲染函数问题)
     - [Vue3组合式api问题](#vue3组合式api问题)
     - [React Context简易状态管理](#react-context简易状态管理)
+    - [Vite jsxInject](#vite-jsxinject)
   - [HTML/CSS/JS/小程序/Git相关](#htmlcssjs小程序git相关)
     - [movable-view](#movable-view)
     - [关于点击穿透](#关于点击穿透)
@@ -361,6 +363,24 @@ export default {
 
 ### React Context简易状态管理
 可直接查看[博客详情](https://mrleidesen.github.io/posts/react_context/)
+
+[回到顶部](#目录)
+
+### Vite jsxInject
+我们通过 `Create-React-App` 创建项目时，可以不需要在`jsx`中引入`import React from 'react'`。
+
+当我们通过  `Vite` 创建项目时，需要自己配置`jsxInject`才可以默认注入
+
+```js
+// ...
+export default defineConfig({
+  // ...
+  esbuild: {
+    jsxInject: `import React from 'react'`,
+  },
+})
+// ...
+```
 
 [回到顶部](#目录)
 
