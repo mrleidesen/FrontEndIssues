@@ -1,6 +1,7 @@
 # 前端技术一些踩坑记录（缓慢记录中...）
 
 ## 更新日志
+* `[2021-07-22]` 更新[小程序 Swiper 禁止滑动](#小程序-swiper-禁止滑动)
 * `[2021-07-11]` 更新[Vite jsxInject](#vite-jsxinject)
 * `[2021-07-09]` 更新[eslint 配置全局参数](#eslint-配置全局参数)
 * `[2021-06-16]` 更新[React Context简易状态管理](#react-context简易状态管理)
@@ -73,6 +74,7 @@
     - [Git 版本回退](#git-版本回退)
     - [macOS下commit描述问题](#macos下commit描述问题)
     - [eslint 配置全局参数](#eslint-配置全局参数)
+    - [小程序 Swiper 禁止滑动](#小程序-swiper-禁止滑动)
 
 ## 编辑器相关（VSCode）
 ### 实用插件
@@ -777,6 +779,31 @@ macOS中需要严格注意大小写，否则会出现不知名的问题
 module.exports = {
   globals: {
     wx: 'readonly'
+  }
+}
+```
+
+[回到顶部](#目录)
+
+### 小程序 Swiper 禁止滑动
+有时候小程序项目中会需要禁止 Swiper 的滑动，有两种方法
+
+* 禁止滑动的时候直接用 view 代替展示
+* 使用 `catchtouchmove`
+```html
+<swiper-item 
+  catchtouchmove="{{needCatch ? 'handleCatchTouchMove' : ''}}"
+></swiper-item>
+```
+
+```js
+data: {
+  needCatch: true
+},
+
+methods: {
+  handleCatchTouchMove() {
+    return
   }
 }
 ```
