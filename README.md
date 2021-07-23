@@ -1,6 +1,7 @@
 # 前端技术一些踩坑记录（缓慢记录中...）
 
 ## 更新日志
+* `[2021-07-23]` 更新[prettier格式化HTML时错位](#prettier格式化html时错位)
 * `[2021-07-22]` 更新[小程序 Swiper 禁止滑动](#小程序-swiper-禁止滑动)
 * `[2021-07-11]` 更新[Vite jsxInject](#vite-jsxinject)
 * `[2021-07-09]` 更新[eslint 配置全局参数](#eslint-配置全局参数)
@@ -75,6 +76,7 @@
     - [macOS下commit描述问题](#macos下commit描述问题)
     - [eslint 配置全局参数](#eslint-配置全局参数)
     - [小程序 Swiper 禁止滑动](#小程序-swiper-禁止滑动)
+    - [prettier格式化HTML时错位](#prettier格式化html时错位)
 
 ## 编辑器相关（VSCode）
 ### 实用插件
@@ -807,5 +809,23 @@ methods: {
   }
 }
 ```
+
+[回到顶部](#目录)
+
+### prettier格式化HTML时错位
+有时候在使用 Prettier 格式化 HTML 的时候，会出现 `>` 错位，比如：
+
+```html
+<nav-link
+  url="/pages/user"
+  class="nickname"
+  >{{ .nick_name }}</nav-link
+>
+<follow-button />
+```
+
+这时我们需要在 Prettier 中设置 `htmlWhitespaceSensitivity` 为 `ignore` 就可以了。
+
+如果你有 `.prettierrc.js` 这个文件就在这里设置，如果是 VSCode 插件则在插件中设置 
 
 [回到顶部](#目录)
