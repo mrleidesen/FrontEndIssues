@@ -828,4 +828,6 @@ methods: {
 
 如果你有 `.prettierrc.js` 这个文件就在这里设置，如果是 VSCode 插件则在插件中设置 
 
+[参考 StackOverflow](https://stackoverflow.com/questions/53209320/vscode-prettier-formats-html-in-an-odd-way-greater-than-symbol-on-next-line)
+
 [回到顶部](#目录)
