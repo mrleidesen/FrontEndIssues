@@ -1,5 +1,8 @@
 # 前端技术一些踩坑记录（缓慢记录中...）
 
+## 小程序相关另开一个仓库整理
+[微信小程序踩坑记录 ](https://github.com/mrleidesen/miniprogram-issues)
+
 ## 更新日志
 * `[2021-07-23]` 更新[prettier格式化HTML时错位](#prettier格式化html时错位)
 * `[2021-07-22]` 更新[小程序 Swiper 禁止滑动](#小程序-swiper-禁止滑动)
