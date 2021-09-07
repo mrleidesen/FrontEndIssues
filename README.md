@@ -4,6 +4,7 @@
 [微信小程序踩坑记录 ](https://github.com/mrleidesen/miniprogram-issues)
 
 ## 更新日志
+* `[2021-09-07]` 更新[微信H5阴影失效](#微信H5阴影失效)
 * `[2021-07-23]` 更新[prettier格式化HTML时错位](#prettier格式化html时错位)
 * `[2021-07-22]` 更新[小程序 Swiper 禁止滑动](#小程序-swiper-禁止滑动)
 * `[2021-07-11]` 更新[Vite jsxInject](#vite-jsxinject)
@@ -80,6 +81,7 @@
     - [eslint 配置全局参数](#eslint-配置全局参数)
     - [小程序 Swiper 禁止滑动](#小程序-swiper-禁止滑动)
     - [prettier格式化HTML时错位](#prettier格式化html时错位)
+    - [微信H5阴影失效](#微信H5阴影失效)
 
 ## 编辑器相关（VSCode）
 ### 实用插件
@@ -832,5 +834,10 @@ methods: {
 如果你有 `.prettierrc.js` 这个文件就在这里设置，如果是 VSCode 插件则在插件中设置 
 
 [参考 StackOverflow](https://stackoverflow.com/questions/53209320/vscode-prettier-formats-html-in-an-odd-way-greater-than-symbol-on-next-line)
+
+[回到顶部](#目录)
+
+### 微信H5阴影失效
+因为微信自带的浏览器兼容性很差，问题很多，有时候在写 `box-shadow` 的时候会发现在安卓下失效了，可以试试把 **十六进制** 的颜色改成 `rgb/rgba` 形式的
 
 [回到顶部](#目录)
