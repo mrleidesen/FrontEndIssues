@@ -6,6 +6,7 @@
 
 ## 更新日志
 
+- `[2021-10-12]` 更新[禁用user-select移动端副作用](#禁用user-select移动端副作用)
 - `[2021-09-26]` 更新[iOS 和安卓视频预览第一帧](#ios-和安卓视频预览第一帧)
 - `[2021-09-07]` 更新[微信 H5 阴影失效](#微信H5阴影失效)
 - `[2021-07-23]` 更新[prettier 格式化 HTML 时错位](#prettier格式化html时错位)
@@ -88,6 +89,7 @@
     - [prettier 格式化 HTML 时错位](#prettier-格式化-html-时错位)
     - [微信 H5 阴影失效](#微信-h5-阴影失效)
     - [iOS 和安卓视频预览第一帧](#ios-和安卓视频预览第一帧)
+    - [禁用user-select移动端副作用](#禁用user-select移动端副作用)
 
 ## 编辑器相关（VSCode）
 
@@ -960,5 +962,27 @@ methods: {
 
 - `src` 链接后加上 `#t=0.01`
 - `preload` 设置为 `metadata`
+
+[回到顶部](#目录)
+
+### 禁用user-select移动端副作用
+
+我们在 Web 开发时大多会使用 `user-select: none` 来禁止用户对文本进行选中。
+
+但是在移动端，会因为 `contextmenu` 而出现副作用：
+> 禁用了 `user-select` 后长按会选中下一个未禁用的位置
+
+搜了网上很多的答案
+1. [Disabling the context menu on long taps on Android](https://stackoverflow.com/questions/3413683/disabling-the-context-menu-on-long-taps-on-android)
+2. [CSS: -webkit-touch-callout alternatives for android](https://stackoverflow.com/questions/16011159/css-webkit-touch-callout-alternatives-for-android)
+3. [-webkit-touch-callout](https://developer.mozilla.org/en-US/docs/Web/CSS/-webkit-touch-callout)
+
+在安卓下通过 `oncontextmenu = () => false` 可以解决问题
+
+但是 iOS 下无法通过 `-webkit-touch-callout: none` 来解决问题
+
+但是可以通过 `ontouchstart = () => false` 来禁用，但是副作用是这个范围内无法再滑动等操作
+
+iOS 下还需研究其他方案，暂时搁置
 
 [回到顶部](#目录)
