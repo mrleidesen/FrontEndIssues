@@ -6,9 +6,11 @@
 
 ## 更新日志
 
+
+- `[2021-10-25]` 更新[Next.js window is not defined](#Nextjs-window-is-not-defined)
 - `[2021-10-12]` 更新[禁用user-select移动端副作用](#禁用user-select移动端副作用)
 - `[2021-09-26]` 更新[iOS 和安卓视频预览第一帧](#ios-和安卓视频预览第一帧)
-- `[2021-09-07]` 更新[微信 H5 阴影失效](#微信H5阴影失效)
+- `[2021-09-07]` 更新[微信 H5 阴影失效](#微信-h5-阴影失效)
 - `[2021-07-23]` 更新[prettier 格式化 HTML 时错位](#prettier格式化html时错位)
 - `[2021-07-22]` 更新[小程序 Swiper 禁止滑动](#小程序-swiper-禁止滑动)
 - `[2021-07-11]` 更新[Vite jsxInject](#vite-jsxinject)
@@ -59,6 +61,7 @@
     - [Vue3 组合式 api 问题](#vue3-组合式-api-问题)
     - [React Context 简易状态管理](#react-context-简易状态管理)
     - [Vite jsxInject](#vite-jsxinject)
+    - [Next.js window is not defined](#Nextjs-window-is-not-defined)
   - [HTML/CSS/JS/小程序/Git 相关](#htmlcssjs小程序git-相关)
     - [movable-view](#movable-view)
     - [关于点击穿透](#关于点击穿透)
@@ -472,6 +475,35 @@ interface Props {
 ```
 
 否则会重复出现错误，建议在项目创建时就配置好，不然后期再配置修改有点大
+
+[回到顶部](#目录)
+
+### Next.js window is not defined
+Next.js 出现 `window is not defined` 的时候，可以通过 `dynamic import` 来动态导入
+```js
+// 普通导入
+import Share from '../components/share'
+
+// 动态导入
+import dynamic from 'next/dynamic'
+const Share = dynamic(() => import(../components/share), { ssr: false })
+```
+
+以上是针对 JS 和 export default 的方式导出
+
+如果你使用的是 TS 以及 export 的方式导出
+
+```ts
+// 组件
+export const Share: FC<Props> = () => { 
+  // ...
+}
+
+// 导入
+import dynamic from 'next/dynamic'
+// 要加上相关类型，不然会报类型错误，也可以使用 any （不推荐）
+const Share = dynamic<Props>(() => import(../components/share).then((mod) => mod.Share), { ssr: false })
+```
 
 [回到顶部](#目录)
 
