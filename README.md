@@ -853,7 +853,20 @@ speechSynthesis.speak(speech);
 </style>
 ```
 
-目前想到这五种，其他实在在项目中没怎么用到，自己也没用过，就不放上来误导了。
+- padding
+
+```html
+<a class="link" href="#">link</a>
+<style>
+  .link {
+    padding: 10px 20px;
+    background-color: royalblue;
+    color: #fff;
+  }
+</style>
+```
+
+目前想到这几种，其他实在在项目中没怎么用到，自己也没用过，就不放上来误导了。
 
 [回到顶部](#目录)
 
