@@ -6,9 +6,8 @@
 
 ## 更新日志
 
-
 - `[2021-10-25]` 更新[Next.js window is not defined](#Nextjs-window-is-not-defined)
-- `[2021-10-12]` 更新[禁用user-select移动端副作用](#禁用user-select移动端副作用)
+- `[2021-10-12]` 更新[禁用 user-select 移动端副作用](#禁用user-select移动端副作用)
 - `[2021-09-26]` 更新[iOS 和安卓视频预览第一帧](#ios-和安卓视频预览第一帧)
 - `[2021-09-07]` 更新[微信 H5 阴影失效](#微信-h5-阴影失效)
 - `[2021-07-23]` 更新[prettier 格式化 HTML 时错位](#prettier格式化html时错位)
@@ -26,7 +25,7 @@
 - `[2021-02-23]` 更新[Element UI 如果在项目中需要 CDN 引入](#element-ui如果在项目中需要cdn引入)
 - `[2021-01-22]` 更新[Tailwind 在 VSCode 中的智能提示](#tailwind在vscode中的智能提示)
 - `[2020-12-25]` 更新[Vue 中通过 CDN 引入高德地图 externals 的问题](#vue中通过cdn引入高德地图externals的问题)
-- `[2020-12-07]` 更新[js 文字转语音](#js文字转语音)
+- `[2020-12-07]` 更新[js 文字转语音](#js-文字转语音)
 - `[2020-12-04]` 更新[IOS 格式化日期出错](#ios格式化日期出错)
 - `[2020-9-07]` 更新[页面平滑滚动](#页面平滑滚动)
 - `[2020-7-22]` 更新[Vue 和 TS](#Vue和TS)
@@ -61,7 +60,7 @@
     - [Vue3 组合式 api 问题](#vue3-组合式-api-问题)
     - [React Context 简易状态管理](#react-context-简易状态管理)
     - [Vite jsxInject](#vite-jsxinject)
-    - [Next.js window is not defined](#Nextjs-window-is-not-defined)
+    - [Next.js window is not defined](#nextjs-window-is-not-defined)
   - [HTML/CSS/JS/小程序/Git 相关](#htmlcssjs小程序git-相关)
     - [movable-view](#movable-view)
     - [关于点击穿透](#关于点击穿透)
@@ -92,7 +91,7 @@
     - [prettier 格式化 HTML 时错位](#prettier-格式化-html-时错位)
     - [微信 H5 阴影失效](#微信-h5-阴影失效)
     - [iOS 和安卓视频预览第一帧](#ios-和安卓视频预览第一帧)
-    - [禁用user-select移动端副作用](#禁用user-select移动端副作用)
+    - [禁用 user-select 移动端副作用](#禁用-user-select-移动端副作用)
 
 ## 编辑器相关（VSCode）
 
@@ -479,7 +478,9 @@ interface Props {
 [回到顶部](#目录)
 
 ### Next.js window is not defined
+
 Next.js 出现 `window is not defined` 的时候，可以通过 `dynamic import` 来动态导入
+
 ```js
 // 普通导入
 import Share from '../components/share'
@@ -495,7 +496,7 @@ const Share = dynamic(() => import(../components/share), { ssr: false })
 
 ```ts
 // 组件
-export const Share: FC<Props> = () => { 
+export const Share: FC<Props> = () => {
   // ...
 }
 
@@ -1008,16 +1009,20 @@ methods: {
 - `src` 链接后加上 `#t=0.01`
 - `preload` 设置为 `metadata`
 
+这里补充一下，上面这种是一个方法，但只需要设置 `preload="auto"` 效果就是正常的。除了微信 H5，那玩意儿就是毒瘤
+
 [回到顶部](#目录)
 
-### 禁用user-select移动端副作用
+### 禁用 user-select 移动端副作用
 
 我们在 Web 开发时大多会使用 `user-select: none` 来禁止用户对文本进行选中。
 
 但是在移动端，会因为 `contextmenu` 而出现副作用：
+
 > 禁用了 `user-select` 后长按会选中下一个未禁用的位置
 
 搜了网上很多的答案
+
 1. [Disabling the context menu on long taps on Android](https://stackoverflow.com/questions/3413683/disabling-the-context-menu-on-long-taps-on-android)
 2. [CSS: -webkit-touch-callout alternatives for android](https://stackoverflow.com/questions/16011159/css-webkit-touch-callout-alternatives-for-android)
 3. [-webkit-touch-callout](https://developer.mozilla.org/en-US/docs/Web/CSS/-webkit-touch-callout)
